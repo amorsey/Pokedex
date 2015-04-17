@@ -2,23 +2,23 @@
 #include <iostream>
 #include "pokemonparty.h"
 #include "items.h"
+#include "badgecase.h"
 using namespace std;
 
 int main()
 {
     char choice;
     
-    
     //Display Menu
     while(true)
     {
         cout << "\t\tPokemon Menu: \n";
         cout << "(A) Pokedex \n";
-        cout << "(B) Pokemon \n";
+        cout << "(B) Pokemon Party \n";
         cout << "(C) Items \n";
         cout << "(D) Badges \n";
         cout << "(D) Exit \n";
-        cout << "Enter choice A, B, C, D, or E: ";
+        cout << "Enter choice A, B, C, D, or E: \n";
     
         cin >> choice;
     
@@ -34,7 +34,7 @@ int main()
             case 'C': items();
                     break;
             case 'd':
-            case 'D': cout << "You entered Badges. \n";
+            case 'D': showBadges();
                     break;
             case 'e':
             case 'E': cout << "Goodbye! \n";
