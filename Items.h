@@ -21,6 +21,7 @@ public:
     void addItem(string);
     void useItem(string);
     void displayAll();
+    void sort();
 };
 
 Items::Items(){
@@ -36,12 +37,14 @@ void Items::addItem(string thing){
             spot = i;
     }
     
-    if(spot == -1){
+    if(spot > -1){
+        bag[spot].number++;
+    }else if(size < 10){
         bag[size].name = thing;
         bag[size].number = 1;
         size++;
-    } else{
-        bag[spot].number++;
+    }else{
+        cout << "Bag is full\n";
     }
 }
 
@@ -54,7 +57,7 @@ void Items::useItem(string thing){
     }
     
     if(spot == -1){
-        cout << "No item";
+        cout << "No item found";
     } else if(bag[spot].number == 1){
         for(int i = spot; i < size; i++){
             bag[i] = bag[i+1];
@@ -63,8 +66,6 @@ void Items::useItem(string thing){
     } else{
         bag[spot].number--;
     }
-    
-
 }
 
 void Items::displayAll(){
@@ -74,4 +75,15 @@ void Items::displayAll(){
     cout << endl;
 }
 
+void Items::sort(){
+    for(int i = 0; i < size; i++){
+        for(int j = 0; j < size - 1; j++){
+            if(bag[j].name > bag[j+1].name){
+                Slot temp = bag[j+1];
+                bag[j+1] = bag[j];
+                bag[j] = temp;
+            }
+        }
+    }
+}
 #endif /* defined(__CS_252_Project__Badges__) */
