@@ -1,5 +1,6 @@
 //Pokedex
 #include <iostream>
+#include "pokemonparty.h"
 using namespace std;
 
 int main()
@@ -23,7 +24,7 @@ int main()
         case 'A': cout << "You entered Pokedex. \n";
                   break;
         case 'b':
-        case 'B': cout << "You entered Pokemon. \n";
+        case 'B': pokemonparty();
                   break;
         case 'c':
         case 'C': cout << "You entered Items. \n";

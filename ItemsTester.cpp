@@ -2,7 +2,8 @@
 #include "Items.h"
 using namespace std;
 
-int main() {
+void items()
+{
     Items one;
     one.addItem("Potion");
     one.addItem("Potion");
