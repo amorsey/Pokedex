@@ -1,2 +1,2 @@
 # Pokedex
-Awesome!
+GET DEM POKES!!!!
