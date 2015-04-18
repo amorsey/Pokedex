@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		576703351AE1A7FB00F3B971 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576703341AE1A7FB00F3B971 /* main.cpp */; };
-		576703421AE1A8C700F3B971 /* badgecase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5767033C1AE1A8C700F3B971 /* badgecase.cpp */; };
+		576703421AE1A8C700F3B971 /* badgecase.h in Sources */ = {isa = PBXBuildFile; fileRef = 5767033C1AE1A8C700F3B971 /* badgecase.h */; };
 		576703431AE1A8C700F3B971 /* IntQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5767033D1AE1A8C700F3B971 /* IntQueue.cpp */; };
 		5767034B1AE1AA8000F3B971 /* pokemonparty.h in Sources */ = {isa = PBXBuildFile; fileRef = 5767034A1AE1AA8000F3B971 /* pokemonparty.h */; };
 /* End PBXBuildFile section */
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		574254271AE19EBC0014DC2A /* Pokedex */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Pokedex; sourceTree = BUILT_PRODUCTS_DIR; };
 		576703341AE1A7FB00F3B971 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
-		5767033C1AE1A8C700F3B971 /* badgecase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = badgecase.cpp; sourceTree = SOURCE_ROOT; };
+		5767033C1AE1A8C700F3B971 /* badgecase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = badgecase.h; sourceTree = SOURCE_ROOT; };
 		5767033D1AE1A8C700F3B971 /* IntQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntQueue.cpp; sourceTree = SOURCE_ROOT; };
 		5767033E1AE1A8C700F3B971 /* IntQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntQueue.h; sourceTree = SOURCE_ROOT; };
 		5767033F1AE1A8C700F3B971 /* Items.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Items.h; sourceTree = SOURCE_ROOT; };
@@ -65,7 +65,7 @@
 		574254291AE19EBC0014DC2A /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				5767033C1AE1A8C700F3B971 /* badgecase.cpp */,
+				5767033C1AE1A8C700F3B971 /* badgecase.h */,
 				5767033D1AE1A8C700F3B971 /* IntQueue.cpp */,
 				5767033E1AE1A8C700F3B971 /* IntQueue.h */,
 				5767033F1AE1A8C700F3B971 /* Items.h */,
@@ -134,7 +134,7 @@
 				576703351AE1A7FB00F3B971 /* main.cpp in Sources */,
 				576703431AE1A8C700F3B971 /* IntQueue.cpp in Sources */,
 				5767034B1AE1AA8000F3B971 /* pokemonparty.h in Sources */,
-				576703421AE1A8C700F3B971 /* badgecase.cpp in Sources */,
+				576703421AE1A8C700F3B971 /* badgecase.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

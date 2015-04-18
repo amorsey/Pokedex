@@ -2,7 +2,8 @@
 #include <stack>
 using namespace std;
 
-void showBadges(){
+void showBadges()
+{
     stack<string> badgeCase;
     string badge1, badge2, badge3, badge4, badge5, badge6, badge7, badge8;
 
@@ -47,6 +48,6 @@ void showBadges(){
     cout << badge8 << endl << endl;
     badgeCase.pop();
 
-    cout << "Press any key to go back.";
+    cout << "Press any key to go back." <<endl;
     cin.ignore();
 }
