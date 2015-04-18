@@ -1,6 +1,9 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <fstream>
+using namespace std;
+
 using namespace std;
 
 class Pokedex{
@@ -23,30 +26,37 @@ public:
     }
     
     void addPokes(int num, string pokeName, string pokeType1, string pokeType2){
-        Pokemon *newPokePtr;
-        Pokemon *pokePtr;
-        
-        newPokePtr = new Pokemon;
+        Pokemon *newPokePtr = new Pokemon;
         newPokePtr -> number = num;
+        newPokePtr -> name = pokeName;
         newPokePtr -> left = nullptr;
         newPokePtr -> right = nullptr;
         newPokePtr -> type1 = pokeType1;
         newPokePtr -> type2 = pokeType2;
         
         if (!head) { head = newPokePtr; }
-        else {
-            pokePtr = head;
-            while(newPokePtr -> number < pokePtr -> number && pokePtr -> left) { pokePtr = pokePtr -> left; }
-            while(newPokePtr -> number > pokePtr -> number && pokePtr -> right) { pokePtr = pokePtr -> right; }
+        else{
+            Pokemon *pokePtr = head;
+            while(pokePtr -> left && newPokePtr -> number < pokePtr -> number) { pokePtr = pokePtr -> left; }
+            while(pokePtr -> right && newPokePtr -> number > pokePtr -> number) { pokePtr = pokePtr -> right; }
             if(newPokePtr -> number < pokePtr -> number) { pokePtr -> left = newPokePtr; }
-            else { pokePtr -> right = newPokePtr; }
+            else{ pokePtr -> right = newPokePtr; }
         }
     }
+    
+    void display(Pokemon* pokePtr){
+        cout << "Number:     Name:          Type(s):\n";
+        if(pokePtr -> left) { display(pokePtr -> left); }
+        cout << setw(7) << right << pokePtr -> number << "     " << left << setw(10) << pokePtr -> name << "     " << setw(8) << pokePtr -> type1 << " "<< setw(8) << pokePtr -> type2 << endl << endl;
+        if(pokePtr -> right) { display(pokePtr -> right); }
+    }
+    
+    void showPokes() { display(head); }
     
     void getPokesFile(){
         
         int number;
-        int count;
+        int count = 0;
         string name;
         string type1;
         string type2;
@@ -58,6 +68,7 @@ public:
         ifstream myfile("PokeList.txt");
         if (myfile.is_open()){
             while(!(myfile.eof())){
+                type2 = "";
                 getline (myfile,line);
                 
                 //Pull number for line.
@@ -81,8 +92,8 @@ public:
                 
                 //Pull second type from line.
                 start = start + end;
-                if(line.substr(start+1) == "\n"){
-                    start = line.find_first_not_of(" ", start);
+                start = line.find_first_not_of(" ", start);
+                if(start != string::npos){
                     end = line.find(" ", start) - start;
                     type2 = line.substr(start,end);
                 }

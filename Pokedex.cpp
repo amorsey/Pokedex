@@ -49,6 +49,59 @@ public:
     }
 
     void showPokes() { display(head); }
+    
+    void getPokesFile(){
+        
+        int number;
+        int count;
+        string name;
+        string type1;
+        string type2;
+        string line;
+        unsigned long start;
+        unsigned long end;
+        
+        //Open and pull from file.
+        ifstream myfile("PokeList.txt");
+        if (myfile.is_open()){
+            while(!(myfile.eof())){
+                getline (myfile,line);
+                
+                //Pull number for line.
+                start = line.find(" ");
+                name = line.substr(1, start);
+                number = stoi(name);
+                
+                //Pull name from line.
+                start = line.find_first_not_of(" ", start);
+                end = line.find(" ", start) - start;
+                name = line.substr(start,end);
+                
+                //Pull frist type from line.
+                start = start + end;
+                start = line.find_first_not_of(" ", start);
+                end = line.find(" ", start) - start;
+                start = start + end;
+                start = line.find_first_not_of(" ", start);
+                end = line.find(" ", start) - start;
+                type1 = line.substr(start,end);
+                
+                //Pull second type from line.
+                start = start + end;
+                if(line.substr(start+1) == "\n"){
+                    start = line.find_first_not_of(" ", start);
+                    end = line.find(" ", start) - start;
+                    type2 = line.substr(start,end);
+                }
+                
+                addPokes(number, name, type1, type2);
+                count ++;
+            }
+            myfile.close();
+        }
+        else cout << "Unable to open file"<<endl;
+    }
+
 
     ~Pokedex(){
         Pokemon *temp = head;
