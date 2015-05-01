@@ -1,3 +1,4 @@
+//Sorting Items using Selection Sort
 #ifndef __CS_252_Project__Badges__
 #define __CS_252_Project__Badges__
 

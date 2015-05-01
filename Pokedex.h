@@ -1,9 +1,8 @@
+//Pokedex using Binary Tree
 #include <iostream>
 #include <iomanip>
 #include <string>
 #include <fstream>
-using namespace std;
-
 using namespace std;
 
 class Pokedex{
