@@ -10,7 +10,7 @@ int main()
 {
     char choice;
     
-    Pokedex pokemon;
+    Pokedex pokemon;        //Creates an object which will add all pokemon to the pokedex
     
     //Display Menu
     while(true)
@@ -28,16 +28,16 @@ int main()
         switch (choice)
         {
             case 'a':
-            case 'A': pokemon.showPokes();
+            case 'A': pokemon.showPokes();          //Function to display all Pokemon in the pokedex
                     break;
             case 'b':
-            case 'B': pokemonparty();
+            case 'B': pokemonparty();               //Function to display the 6 Pokemon in our party
                     break;
             case 'c':
-            case 'C': items();
+            case 'C': items();                      //Function to display our items
                     break;
             case 'd':
-            case 'D': showBadges();
+            case 'D': showBadges();                 //Function to display our badges
                     break;
             case 'e':
             case 'E': cout << "Goodbye! \n";

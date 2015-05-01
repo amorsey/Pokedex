@@ -1,8 +1,8 @@
-//Pokemon Selection Queue
+//Pokemon Selection using Queue
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include "IntQueue.h"
+#include <cstdlib>      //Needed for srand function
+#include <ctime>        //Needed for time function
+#include "IntQueue.h"   //To attach IntQueue.h
 using namespace std;
 
 void pokemonparty()
@@ -13,15 +13,14 @@ void pokemonparty()
     
     IntQueue iQueue(MAX_VALUES);
     
-    cout << "Getting " << MAX_VALUES << " Pokemon...\n";
-    for (int index = 0; index < MAX_VALUES; index++)
+    for (int index = 0; index < MAX_VALUES; index++)        //For loop to choose 6 Pokemon
     {
-        pokemon = (rand()%151) + 1;
-        iQueue.enqueue(pokemon);
+        pokemon = (rand()%151) + 1;                         //Assigns a random number between 1 and 151
+        iQueue.enqueue(pokemon);                            //Puts the number in the queue
     }
     
-    cout << "The Pokemon selected were... \n";
-    while (!iQueue.isEmpty())
+    cout << "Your Party: \n";
+    while (!iQueue.isEmpty())                               //While loop to display the 6 pokemon in the queue
     {
         int value;
         iQueue.dequeue(value);
