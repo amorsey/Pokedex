@@ -75,12 +75,9 @@ public:
 
     //tranverses the linked list to find a node who's number field matches the number passed
     Pokemon* findPoke(Pokemon *temp ,int num){
-        Pokemon *pokePtr;
-        temp = head;
         if(temp -> left) { findPoke(temp -> left, num); }
-        if(temp -> number == num) { pokePtr = temp; }
+        if(temp -> number == num) { return temp; }
         if(temp -> right) { findPoke(temp -> right, num); }
-        return pokePtr;
     }
 
     //having an extra function for displaying allows the main to call display without passing any parameters and for display to execute recursively
