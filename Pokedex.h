@@ -16,16 +16,11 @@ private:
     Pokemon *head;
 
 public:
-<<<<<<< HEAD
     Pokedex() { head = nullptr;
         getPokesFile();
         }
-    
-=======
-    Pokedex() { head = nullptr; }
 
     //deletes all nodes and pointers recursively
->>>>>>> 7c75df6ae6aec1d3644ce4c0a3ca83ac19bef4ff
     void pokeDelete(Pokemon *temp){
         if (temp->left != nullptr) { pokeDelete(temp->left); }
         if (temp->right != nullptr) { pokeDelete(temp->right); }
