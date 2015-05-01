@@ -3,6 +3,10 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
+<<<<<<< HEAD
+=======
+#include <sstream>
+>>>>>>> 07f866cabb2319e49be01cc04224b2676b779166
 using namespace std;
 
 class Pokedex{
@@ -15,9 +19,10 @@ private:
     Pokemon *head;
 
 public:
-    Pokedex() { head = nullptr;
+    Pokedex(){
+        head = nullptr;
         getPokesFile();
-        }
+    }
 
     //deletes all nodes and pointers recursively
     void pokeDelete(Pokemon *temp){
@@ -107,7 +112,8 @@ public:
                 //Pull number for line.
                 start = line.find(" ");
                 name = line.substr(1, start);
-                number = stoi(name);
+                istringstream buffer(name);
+                buffer >> number;
 
                 //Pull name from line.
                 start = line.find_first_not_of(" ", start);
