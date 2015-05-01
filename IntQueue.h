@@ -18,10 +18,10 @@ class IntQueue
         IntQueue(const IntQueue &);
     
         //Queue Operations
-        void enqueue(int);
-        void dequeue(int &);
-        bool isEmpty() const;
-        bool isFull() const;
-        void clear();
+        void enqueue(int);      //To add to the queue
+        void dequeue(int &);    //To take first in the queue
+        bool isEmpty() const;   //To check if queue is empty
+        bool isFull() const;    //To check if queue is full
+        void clear();           //To clear the queue
 };
 #endif
