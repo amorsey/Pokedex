@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1429307674 source:c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\intqueue.cpp
+	<iostream>
+	"IntQueue.h"
+
+1429307674 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\intqueue.h
+
+1430513517 source:c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\main.cpp
+	<iostream>
+	"pokemonparty.h"
+	"items.h"
+	"badgecase.h"
+	"Pokedex.h"
+
+1430513517 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\pokemonparty.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"IntQueue.h"
+
+1429317850 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\items.h
+	<stdio.h>
+	<string>
+	<iostream>
+
+1429317850 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\badgecase.h
+	<iostream>
+	<stack>
+
+1430514445 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\pokedex.h
+	<iostream>
+	<iomanip>
+	<string>
+	<fstream>
+	<sstream>
+
