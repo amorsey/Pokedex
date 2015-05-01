@@ -3,10 +3,8 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
-<<<<<<< HEAD
-=======
 #include <sstream>
->>>>>>> 07f866cabb2319e49be01cc04224b2676b779166
+
 using namespace std;
 
 class Pokedex{
