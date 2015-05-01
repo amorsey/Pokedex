@@ -16,7 +16,9 @@ private:
     Pokemon *head;
     
 public:
-    Pokedex() { head = nullptr; }
+    Pokedex() { head = nullptr;
+        getPokesFile();
+        }
     
     void pokeDelete(Pokemon *temp){
         if (temp->left != nullptr) { pokeDelete(temp->left); }

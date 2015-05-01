@@ -3,11 +3,14 @@
 #include "pokemonparty.h"
 #include "items.h"
 #include "badgecase.h"
+#include "Pokedex.h"
 using namespace std;
 
 int main()
 {
     char choice;
+    
+    Pokedex pokemon;
     
     //Display Menu
     while(true)
@@ -25,7 +28,7 @@ int main()
         switch (choice)
         {
             case 'a':
-            case 'A': cout << "You entered Pokedex. \n";
+            case 'A': pokemon.showPokes();
                     break;
             case 'b':
             case 'B': pokemonparty();
