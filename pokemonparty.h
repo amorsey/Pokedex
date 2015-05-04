@@ -1,11 +1,12 @@
-//Pokemon Selection using Queue
+#pragma once
 #include <iostream>
 #include <cstdlib>      //Needed for srand function
 #include <ctime>        //Needed for time function
-#include "IntQueue.h"   //To attach IntQueue.h
+#include "IntQueue.h"
+#include "Pokedex.h"
 using namespace std;
-/*
-void pokemonparty(int party[])
+
+void pokemonparty(int party[])                      //Pokemon Selection using Queue
 {
     srand (time(NULL));
     const int MAX_VALUES = 6;
@@ -32,4 +33,4 @@ void pokemonparty(int party[])
     }
     cout << "\nPress any key to return to the menu.\n\n\n";
     getch();
-}*/
+}

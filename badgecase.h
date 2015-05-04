@@ -6,8 +6,8 @@ using namespace std;
 
 void showBadges()
 {
-    stack<string> badgeCase;
-    string badges[8];
+    stack<string> badgeCase;            //Use STL to create a string stack
+    string badges[8];                   //Create an array of string to hold badges
 
     badgeCase.push("Earth Badge");
     badgeCase.push("Volcano Badge");
