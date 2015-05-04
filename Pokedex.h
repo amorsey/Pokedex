@@ -70,23 +70,21 @@ public:
     }
 
     Pokemon* searchPoke(int num){               //extra function allows main to call searchPoke while only passing
-        return findPoke(head, num);             //the number of the desired pokedex entry and for findPoke to
+        Pokemon * ptr = head;
+        return findPoke(ptr, num);             //the number of the desired pokedex entry and for findPoke to
     }                                           //execute recursively
 
     Pokemon* findPoke(Pokemon *temp ,int num){  //traverses the linked list to find a node who's number field
-        if(temp){                               //matches the number passed
-            if(temp -> number == num) { return temp; }
+            if(temp -> number == num) { return temp; } //matches the number passed
             if(temp -> number > num) { findPoke(temp -> left, num); }
             if(temp -> number < num) { findPoke(temp -> right, num); }
-        }
-        else { return nullptr; }
     }
 
     void showPokes(){                           //extra function for displaying allows main to call showPokes
         cout << "\nNumber:     Name:          Type(s):\n";
         display(head);                          //without passing any parameters and for display to execute recursively
         cout << "\nPress any key to return to the menu.\n\n\n";
-        getch();
+        cin.ignore();
     }
 
     void getPokesFile(){                        //gets all information on each pokemon from a file to add to the BST

@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
     char choice;
-    Pokedex pokemon;                                //Creates an object which will add all pokemon to the pokedex
+    Pokedex pokemon;
     int party[12];                                  //an array of ints to store party pokemon's numbers and their levels
     for(int c = 0; c < 6; c++) { party[c] = 0; }    //initializes the int array
 
