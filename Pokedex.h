@@ -1,13 +1,12 @@
-//Pokedex using Binary Tree
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <fstream>
-#include <sstream>
-#include <conio.h>
+#include <sstream>                              //For converting strings to ints
+#include <fstream>                              //For manipulating files
+#include <conio.h>                              //Contains the getch() function
 using namespace std;
 
-class Pokedex{
+class Pokedex{                                  //Pokedex using Binary Tree
 private:
     struct Pokemon{
         int number, level;
@@ -17,27 +16,27 @@ private:
     Pokemon *head;
 
 public:
-    Pokedex(){
-        head = nullptr;
+    Pokedex(){                                  //constructor automatically fills the pokedex with
+        head = nullptr;                         //information
         getPokesFile();
     }
 
-    //deletes all nodes and pointers recursively
-    void pokeDelete(Pokemon *temp){
+    void pokeDelete(Pokemon *temp){             //deletes all nodes and pointers recursively
         if (temp->left != nullptr) { pokeDelete(temp->left); }
         if (temp->right != nullptr) { pokeDelete(temp->right); }
         delete temp;
         temp = nullptr;
     }
 
-    //adding a pokemon to the binary tree
+    ~Pokedex(){                                 //deconstructor to clean up
+        Pokemon *temp = head;
+        pokeDelete(temp);
+    }
+                                                //adding a pokemon to the binary tree
     void addPokes(int num, string pokeName, string pokeType1, string pokeType2){
+        Pokemon *newPokePtr = new Pokemon;      //create a new node
 
-        //create a new node
-        Pokemon *newPokePtr = new Pokemon;
-
-        //fill the node's variable's with information
-        newPokePtr -> number = num;
+        newPokePtr -> number = num;             //fill the node's variable's with information
         newPokePtr -> name = pokeName;
         newPokePtr -> left = nullptr;
         newPokePtr -> right = nullptr;
@@ -45,44 +44,37 @@ public:
         newPokePtr -> type2 = pokeType2;
         newPokePtr -> level = rand() %100 + 1;
 
-        //check if there is already a tree, create one if there isn't
-        if(!head) { head = newPokePtr; }
-
-        //append the new node if there is
-        else{
+        if(!head) { head = newPokePtr; }        //check if there is already a tree, create one if there isn't
+        else{                                   //append the new node if there is already a tree
             Pokemon *pokePtr = head;
-
-            //go to the bottom of the tree
+                                                //go to the bottom of the tree
             while(pokePtr -> left && newPokePtr -> number < pokePtr -> number) { pokePtr = pokePtr -> left; }
             while(pokePtr -> right && newPokePtr -> number > pokePtr -> number) { pokePtr = pokePtr -> right; }
 
-            //connect the new node to the tree
+                                                //connect the new node to the tree
             if(newPokePtr -> number < pokePtr -> number) { pokePtr -> left = newPokePtr; }
             else{ pokePtr -> right = newPokePtr; }
         }
     }
 
-    //display uses inorder and recursion to display all the pokemon
-    void display(Pokemon* pokePtr){
+    void display(Pokemon* pokePtr){             //display uses inorder and recursion to display all the pokemon
         if(pokePtr -> left) { display(pokePtr -> left); }
-        cout << setw(7) << right << pokePtr -> number << "     " << left << setw(10) << pokePtr -> name << "     " << setw(8) << pokePtr -> type1 << " "<< setw(8) << pokePtr -> type2 << endl;
+        cout << setw(7) << right << pokePtr -> number << "     " << left << setw(10) << pokePtr -> name;
+        cout << "     " << setw(8) << pokePtr -> type1 << " "<< setw(8) << pokePtr -> type2 << endl;
         if(pokePtr -> right) { display(pokePtr -> right); }
     }
 
-    //display used for only showing one pokemon at a time
-    void displaySingle(int num){
+    void displaySingle(int num){                //display used for only showing one pokemon at a time
         Pokemon *pokePtr = findPoke(head, num);
         cout << setw(15) << left << pokePtr -> name;
     }
 
-    Pokemon* searchPoke(int num){
-        Pokemon* temp = findPoke(head, num);
-        return temp;
-    }
+    Pokemon* searchPoke(int num){               //extra function allows main to call searchPoke while only passing
+        return findPoke(head, num);             //the number of the desired pokedex entry and for findPoke to
+    }                                           //execute recursively
 
-    //tranverses the linked list to find a node who's number field matches the number passed
-    Pokemon* findPoke(Pokemon *temp ,int num){
-        if(temp){
+    Pokemon* findPoke(Pokemon *temp ,int num){  //traverses the linked list to find a node who's number field
+        if(temp){                               //matches the number passed
             if(temp -> number == num) { return temp; }
             if(temp -> number > num) { findPoke(temp -> left, num); }
             if(temp -> number < num) { findPoke(temp -> right, num); }
@@ -90,16 +82,14 @@ public:
         else { return nullptr; }
     }
 
-    //having an extra function for displaying allows the main to call display without passing any parameters and for display to execute recursively
-    void showPokes(){
+    void showPokes(){                           //extra function for displaying allows main to call showPokes
         cout << "\nNumber:     Name:          Type(s):\n";
-        display(head);
+        display(head);                          //without passing any parameters and for display to execute recursively
         cout << "\nPress any key to return to the menu.\n\n\n";
         getch();
     }
 
-    //gets all information on each pokemon from a file to add to the BST
-    void getPokesFile(){
+    void getPokesFile(){                        //gets all information on each pokemon from a file to add to the BST
 
         int number;
         int count = 0;
@@ -110,26 +100,22 @@ public:
         unsigned long start;
         unsigned long end;
 
-        //Open and pull from file.
-        ifstream myfile("PokeList.txt");
+        ifstream myfile("PokeList.txt");                        //Open and pull from file.
         if (myfile.is_open()){
             while(!(myfile.eof())){
                 type2 = "";
                 getline (myfile,line);
 
-                //Pull number for line.
-                start = line.find(" ");
+                start = line.find(" ");                         //Pull number for line.
                 name = line.substr(1, start);
                 istringstream buffer(name);
                 buffer >> number;
 
-                //Pull name from line.
-                start = line.find_first_not_of(" ", start);
+                start = line.find_first_not_of(" ", start);     //Pull name from line.
                 end = line.find(" ", start) - start;
                 name = line.substr(start,end);
 
-                //Pull frist type from line.
-                start = start + end;
+                start = start + end;                            //Pull first type from line.
                 start = line.find_first_not_of(" ", start);
                 end = line.find(" ", start) - start;
                 start = start + end;
@@ -137,25 +123,18 @@ public:
                 end = line.find(" ", start) - start;
                 type1 = line.substr(start,end);
 
-                //Pull second type from line.
-                start = start + end;
+                start = start + end;                            //Pull second type from line.
                 start = line.find_first_not_of(" ", start);
                 if(start != string::npos){
                     end = line.find(" ", start) - start;
                     type2 = line.substr(start,end);
                 }
 
-                addPokes(number, name, type1, type2);
+                addPokes(number, name, type1, type2);           //Create a pokemon node.
                 count ++;
             }
-            myfile.close();
+            myfile.close();                                     //Close the file when finished with it.
         }
         else cout << "Unable to open file"<<endl;
-    }
-
-    //deconstructor to clean up
-    ~Pokedex(){
-        Pokemon *temp = head;
-        pokeDelete(temp);
     }
 };
