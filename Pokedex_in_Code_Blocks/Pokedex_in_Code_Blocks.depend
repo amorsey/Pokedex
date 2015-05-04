@@ -3,34 +3,38 @@
 	<iostream>
 	"IntQueue.h"
 
-1429307674 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\intqueue.h
+1430517012 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\intqueue.h
 
-1430513517 source:c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\main.cpp
+1430700183 source:c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\main.cpp
 	<iostream>
+	<iomanip>
 	"pokemonparty.h"
 	"items.h"
 	"badgecase.h"
 	"Pokedex.h"
 
-1430513517 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\pokemonparty.h
+1430693144 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\pokemonparty.h
 	<iostream>
 	<cstdlib>
 	<ctime>
 	"IntQueue.h"
 
-1429317850 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\items.h
+1430696092 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\items.h
 	<stdio.h>
 	<string>
 	<iostream>
+	<conio.h>
 
-1429317850 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\badgecase.h
+1430696056 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\badgecase.h
 	<iostream>
 	<stack>
+	<conio.h>
 
-1430514445 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\pokedex.h
+1430700457 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\pokedex.h
 	<iostream>
 	<iomanip>
 	<string>
 	<fstream>
 	<sstream>
+	<conio.h>
 

@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-
+#include <conio.h>
 using namespace std;
 
 class Pokedex{
@@ -43,6 +43,7 @@ public:
         newPokePtr -> right = nullptr;
         newPokePtr -> type1 = pokeType1;
         newPokePtr -> type2 = pokeType2;
+        newPokePtr -> level = rand() %100 + 1;
 
         //check if there is already a tree, create one if there isn't
         if(!head) { head = newPokePtr; }
@@ -63,30 +64,39 @@ public:
 
     //display uses inorder and recursion to display all the pokemon
     void display(Pokemon* pokePtr){
-        cout << "Number:     Name:          Type(s):\n";
         if(pokePtr -> left) { display(pokePtr -> left); }
-        cout << setw(7) << right << pokePtr -> number << "     " << left << setw(10) << pokePtr -> name << "     " << setw(8) << pokePtr -> type1 << " "<< setw(8) << pokePtr -> type2 << endl << endl;
+        cout << setw(7) << right << pokePtr -> number << "     " << left << setw(10) << pokePtr -> name << "     " << setw(8) << pokePtr -> type1 << " "<< setw(8) << pokePtr -> type2 << endl;
         if(pokePtr -> right) { display(pokePtr -> right); }
     }
 
     //display used for only showing one pokemon at a time
     void displaySingle(int num){
         Pokemon *pokePtr = findPoke(head, num);
-        cout << pokePtr -> name << "\tLvl:" << pokePtr -> level << endl;
+        cout << setw(15) << left << pokePtr -> name;
+    }
+
+    Pokemon* searchPoke(int num){
+        Pokemon* temp = findPoke(head, num);
+        return temp;
     }
 
     //tranverses the linked list to find a node who's number field matches the number passed
     Pokemon* findPoke(Pokemon *temp ,int num){
-        Pokemon *pokePtr;
-        temp = head;
-        if(temp -> left) { findPoke(temp -> left, num); }
-        if(temp -> number == num) { pokePtr = temp; }
-        if(temp -> right) { findPoke(temp -> right, num); }
-        return pokePtr;
+        if(temp){
+            if(temp -> number == num) { return temp; }
+            if(temp -> number > num) { findPoke(temp -> left, num); }
+            if(temp -> number < num) { findPoke(temp -> right, num); }
+        }
+        else { return nullptr; }
     }
 
     //having an extra function for displaying allows the main to call display without passing any parameters and for display to execute recursively
-    void showPokes() { display(head); }
+    void showPokes(){
+        cout << "\nNumber:     Name:          Type(s):\n";
+        display(head);
+        cout << "\nPress any key to return to the menu.\n\n\n";
+        getch();
+    }
 
     //gets all information on each pokemon from a file to add to the BST
     void getPokesFile(){
