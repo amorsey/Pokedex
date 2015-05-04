@@ -7,51 +7,25 @@ using namespace std;
 void showBadges()
 {
     stack<string> badgeCase;
-    string badge1, badge2, badge3, badge4, badge5, badge6, badge7, badge8;
+    string badges[8];
 
-    badgeCase.push("The Earth Badge");
-    badgeCase.push("The Volcano Badge");
-    badgeCase.push("The Marsh Badge");
-    badgeCase.push("The Soul Badge");
-    badgeCase.push("The Rainbow Badge");
-    badgeCase.push("The Thunder Badge");
-    badgeCase.push("The Cascade Badge");
-    badgeCase.push("The Boulder Badge");
+    badgeCase.push("Earth Badge");
+    badgeCase.push("Volcano Badge");
+    badgeCase.push("Marsh Badge");
+    badgeCase.push("Soul Badge");
+    badgeCase.push("Rainbow Badge");
+    badgeCase.push("Thunder Badge");
+    badgeCase.push("Cascade Badge");
+    badgeCase.push("Boulder Badge");
 
     cout << "\n\t\tBadges:\n";
 
-    badge1 = badgeCase.top();
-    cout << badge1 << endl;
-    badgeCase.pop();
+    for(int c = 0; c < 8; c++){
+        badges[c] = badgeCase.top();
+        cout << badges[c] << endl;
+        badgeCase.pop();
+    }
 
-    badge2 = badgeCase.top();
-    cout << badge2 << endl;
-    badgeCase.pop();
-
-    badge3 = badgeCase.top();
-    cout << badge3 << endl;
-    badgeCase.pop();
-
-    badge4 = badgeCase.top();
-    cout << badge4 << endl;
-    badgeCase.pop();
-
-    badge5 = badgeCase.top();
-    cout << badge5 << endl;
-    badgeCase.pop();
-
-    badge6 = badgeCase.top();
-    cout << badge6 << endl;
-    badgeCase.pop();
-
-    badge7 = badgeCase.top();
-    cout << badge7 << endl;
-    badgeCase.pop();
-
-    badge8 = badgeCase.top();
-    cout << badge8 << endl << endl;
-    badgeCase.pop();
-
-    cout << "Press any key to return to the menu." << endl << endl << endl;
+    cout << "\nPress any key to return to the menu.\n\n\n";
     getch();
 }

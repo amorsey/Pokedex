@@ -17,6 +17,7 @@ private:
     Pokemon *head;
 
 public:
+    //constructor automatically fills the pokedex with information
     Pokedex(){
         head = nullptr;
         getPokesFile();
@@ -28,6 +29,12 @@ public:
         if (temp->right != nullptr) { pokeDelete(temp->right); }
         delete temp;
         temp = nullptr;
+    }
+
+    //deconstructor to clean up
+    ~Pokedex(){
+        Pokemon *temp = head;
+        pokeDelete(temp);
     }
 
     //adding a pokemon to the binary tree
@@ -48,7 +55,7 @@ public:
         //check if there is already a tree, create one if there isn't
         if(!head) { head = newPokePtr; }
 
-        //append the new node if there is
+        //append the new node if there is already a tree
         else{
             Pokemon *pokePtr = head;
 
@@ -75,12 +82,12 @@ public:
         cout << setw(15) << left << pokePtr -> name;
     }
 
+    ////extra function allows main to call searchPoke while only passing the number of the desired pokedex entry and for findPoke to execute recursively
     Pokemon* searchPoke(int num){
-        Pokemon* temp = findPoke(head, num);
-        return temp;
+        return findPoke(head, num);
     }
 
-    //tranverses the linked list to find a node who's number field matches the number passed
+    //traverses the linked list to find a node who's number field matches the number passed
     Pokemon* findPoke(Pokemon *temp ,int num){
         if(temp){
             if(temp -> number == num) { return temp; }
@@ -90,7 +97,7 @@ public:
         else { return nullptr; }
     }
 
-    //having an extra function for displaying allows the main to call display without passing any parameters and for display to execute recursively
+    //extra function for displaying allows main to call showPokes without passing any parameters and for display to execute recursively
     void showPokes(){
         cout << "\nNumber:     Name:          Type(s):\n";
         display(head);
@@ -151,11 +158,5 @@ public:
             myfile.close();
         }
         else cout << "Unable to open file"<<endl;
-    }
-
-    //deconstructor to clean up
-    ~Pokedex(){
-        Pokemon *temp = head;
-        pokeDelete(temp);
     }
 };
