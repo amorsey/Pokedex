@@ -3,7 +3,6 @@
 #include <string>
 #include <sstream>                              //For converting strings to ints
 #include <fstream>                              //For manipulating files
-#include <conio.h>                              //Contains the getch() function
 using namespace std;
 
 class Pokedex{                                  //Pokedex using Binary Tree
@@ -78,6 +77,10 @@ public:
             if(temp -> number == num) { return temp; } //matches the number passed
             if(temp -> number > num) { findPoke(temp -> left, num); }
             if(temp -> number < num) { findPoke(temp -> right, num); }
+<<<<<<< HEAD
+=======
+        }
+>>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
     }
 
     void showPokes(){                           //extra function for displaying allows main to call showPokes
@@ -85,7 +88,11 @@ public:
         display(head);                          //without passing any parameters and for display to execute recursively
         cout << "\nPress any key to return to the menu.\n\n\n";
         cin.ignore();
+<<<<<<< HEAD
     }
+=======
+        }
+>>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
 
     void getPokesFile(){                        //gets all information on each pokemon from a file to add to the BST
 

@@ -1,10 +1,13 @@
+<<<<<<< HEAD
+=======
+//Sorting Items using Bubble Sort
+>>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
 #ifndef __CS_252_Project__Badges__
 #define __CS_252_Project__Badges__
 
 #include <stdio.h>
 #include <string>
 #include <iostream>
-#include <conio.h>
 using namespace std;
 
 class Items{                                //Items list class
@@ -85,8 +88,11 @@ void items()
 
     one.sort();
     one.displayAll();
+<<<<<<< HEAD
 
     one.useItem("Potion");
     one.displayAll();
+=======
+>>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
 }
 #endif

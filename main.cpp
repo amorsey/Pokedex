@@ -8,21 +8,29 @@ using namespace std;
 int main()
 {
     char choice;
+<<<<<<< HEAD
     Pokedex pokemon;
     int party[12];                                  //an array of ints to store party pokemon's numbers and their levels
     for(int c = 0; c < 6; c++) { party[c] = 0; }    //initializes the int array
+=======
+>>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
 
-    while(true)                                     //menu
+    Pokedex pokemon;        //Creates an object which will add all pokemon to the pokedex
+
+    int party[12];                                  //An array of ints to store party pokemon's numbers and their levels
+    for(int c = 0; c < 6; c++) { party[c] = 0; }    //Initializes the int array
+
+    while(true)                                     //Menu
     {
         cout << "\t\tPokemon Menu: \n";
-        cout << "(A) Pokedex\n";
-        cout << "(B) Pokemon\n";
-        cout << "(C) Bag\n";
-        cout << "(D) Badge Case \n";
+        cout << "(A) Pokedex \n";
+        cout << "(B) Pokemon Party \n";
+        cout << "(C) Items \n";
+        cout << "(D) Badges \n";
         cout << "(E) Exit \n";
         cout << "Enter choice A, B, C, D, or E: \n";
 
-        cin >> choice;                              //receives users selection
+        cin >> choice;                              //Receives users selection
 
         switch (choice)
         {

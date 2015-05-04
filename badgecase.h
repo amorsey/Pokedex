@@ -25,5 +25,9 @@ void showBadges()                       //Badges using Stacks
     }
 
     cout << "\nPress any key to return to the menu.\n\n\n";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
     cin.ignore();
 }
