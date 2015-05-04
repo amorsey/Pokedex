@@ -8,21 +8,41 @@ using namespace std;
 int main()
 {
     char choice;
-    Pokedex pokemon;                                //Creates an object which will add all pokemon to the pokedex
+<<<<<<< HEAD
+    Pokedex pokemon;
     int party[12];                                  //an array of ints to store party pokemon's numbers and their levels
     for(int c = 0; c < 6; c++) { party[c] = 0; }    //initializes the int array
+=======
+>>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
 
+<<<<<<< HEAD
     while(true){                                     //menu
+=======
+    Pokedex pokemon;        //Creates an object which will add all pokemon to the pokedex
+
+    int party[12];                                  //An array of ints to store party pokemon's numbers and their levels
+    for(int c = 0; c < 6; c++) { party[c] = 0; }    //Initializes the int array
+
+    while(true)                                     //Menu
+    {
+>>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
         cout << "\t\tPokemon Menu: \n";
-        cout << "(A) Pokedex\n";
-        cout << "(B) Pokemon\n";
-        cout << "(C) Bag\n";
-        cout << "(D) Badge Case \n";
+        cout << "(A) Pokedex \n";
+        cout << "(B) Pokemon Party \n";
+        cout << "(C) Items \n";
+        cout << "(D) Badges \n";
         cout << "(E) Exit \n";
         cout << "Enter choice A, B, C, D, or E: \n";
 
+<<<<<<< HEAD
         cin >> choice;                              //receives users selection
         switch (choice){
+=======
+        cin >> choice;                              //Receives users selection
+
+        switch (choice)
+        {
+>>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
             case 'a':
             case 'A': pokemon.showPokes();          //Function to display all Pokemon in the pokedex
                     break;
