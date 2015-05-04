@@ -12,8 +12,7 @@ int main()
     int party[12];                                  //an array of ints to store party pokemon's numbers and their levels
     for(int c = 0; c < 6; c++) { party[c] = 0; }    //initializes the int array
 
-    while(true)                                     //menu
-    {
+    while(true){                                     //menu
         cout << "\t\tPokemon Menu: \n";
         cout << "(A) Pokedex\n";
         cout << "(B) Pokemon\n";
@@ -23,9 +22,7 @@ int main()
         cout << "Enter choice A, B, C, D, or E: \n";
 
         cin >> choice;                              //receives users selection
-
-        switch (choice)
-        {
+        switch (choice){
             case 'a':
             case 'A': pokemon.showPokes();          //Function to display all Pokemon in the pokedex
                     break;

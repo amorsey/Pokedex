@@ -5,8 +5,7 @@
 #include "Pokedex.h"
 using namespace std;
 
-void pokemonparty(int party[])                                  //Pokemon Selection using Queue
-{
+void pokemonparty(int party[]){                                  //Pokemon Selection using Queue
     srand (time(NULL));
     const int MAX_VALUES = 6;
     int c = 0;
@@ -30,6 +29,7 @@ void pokemonparty(int party[])                                  //Pokemon Select
         cout << "Lv: " << party[c + MAX_VALUES] << endl;        //and their levels
         c++;
     }
-    cout << "\nPress any key to return to the menu.\n\n\n";
-    getch();
+    cout << "\nPress enter to return to the menu.\n\n\n";
+    fflush(stdin);
+    cin.ignore();
 }
