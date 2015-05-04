@@ -20,7 +20,7 @@ int main()
         cout << "(B) Pokemon Party \n";
         cout << "(C) Items \n";
         cout << "(D) Badges \n";
-        cout << "(D) Exit \n";
+        cout << "(E) Exit \n";
         cout << "Enter choice A, B, C, D, or E: \n";
     
         cin >> choice;
