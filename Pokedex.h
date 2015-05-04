@@ -1,9 +1,9 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <fstream>
-#include <sstream>
-#include <conio.h>
+#include <sstream>                              //For converting strings to ints
+#include <fstream>                              //For manipulating files
+#include <conio.h>                              //Contains the getch() function
 using namespace std;
 
 class Pokedex{                                  //Pokedex using Binary Tree
