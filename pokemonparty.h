@@ -5,11 +5,7 @@
 #include "Pokedex.h"
 using namespace std;
 
-<<<<<<< HEAD
-void pokemonparty()
-=======
 void pokemonparty(int party[])                                  //Pokemon Selection using Queue
->>>>>>> 26fcff65fdb5c52753dfe10ba0c9469dad4ff9bd
 {
     srand (time(NULL));
     const int MAX_VALUES = 6;
@@ -35,5 +31,5 @@ void pokemonparty(int party[])                                  //Pokemon Select
         c++;
     }
     cout << "\nPress any key to return to the menu.\n\n\n";
-    getch();
+    //getch();
 }

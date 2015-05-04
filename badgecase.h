@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stack>
-#include <conio.h>                      //Contains the getch() function
 using namespace std;
 
 void showBadges()                       //Badges using Stacks
@@ -26,5 +25,7 @@ void showBadges()                       //Badges using Stacks
     }
 
     cout << "\nPress any key to return to the menu.\n\n\n";
-    getch();
+    fflush(stdin);
+    cin.ignore();
+    char c = cin.get();
 }

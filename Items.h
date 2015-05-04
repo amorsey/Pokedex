@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
-#include <conio.h>
+//#include <conio.h>
 using namespace std;
 
 class Items{
@@ -76,7 +76,7 @@ void Items::displayAll(){
         cout << bag[i].name << "\n          x " << bag[i].number << endl;
     }
     cout << "\nPress any key to return to the menu.\n\n\n";
-    getch();
+    //getch();
 }
 
 void Items::sort(){
