@@ -25,7 +25,6 @@ void showBadges()                       //Badges using Stacks
     }
 
     cout << "\nPress any key to return to the menu.\n\n\n";
-    fflush(stdin);
+
     cin.ignore();
-    char c = cin.get();
 }

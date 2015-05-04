@@ -31,5 +31,5 @@ void pokemonparty(int party[])                                  //Pokemon Select
         c++;
     }
     cout << "\nPress any key to return to the menu.\n\n\n";
-    //getch();
+    cin.ignore();
 }
