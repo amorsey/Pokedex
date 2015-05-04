@@ -5,51 +5,32 @@
 
 1430517012 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\intqueue.h
 
-<<<<<<< HEAD
 1430774100 source:c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\main.cpp
-=======
-1430766497 source:c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\main.cpp
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
 	<iostream>
 	<iomanip>
 	"pokemonparty.h"
 	"items.h"
 	"badgecase.h"
 
-<<<<<<< HEAD
 1430774241 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\pokemonparty.h
-=======
-1430770457 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\pokemonparty.h
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
 	<iostream>
 	<cstdlib>
 	<ctime>
 	"IntQueue.h"
 	"Pokedex.h"
 
-<<<<<<< HEAD
 1430774963 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\items.h
-=======
-1430770161 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\items.h
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
 	<stdio.h>
 	<string>
 	<iostream>
 	<conio.h>
 
-<<<<<<< HEAD
 1430774241 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\badgecase.h
-=======
-1430770191 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\badgecase.h
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
 	<iostream>
 	<stack>
+	<conio.h>
 
-<<<<<<< HEAD
 1430774241 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\pokedex.h
-=======
-1430771246 c:\users\b\onedrive\documents\programming\data_structures_spring_2015\pokedex2\pokedex.h
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
 	<iostream>
 	<iomanip>
 	<string>

@@ -1,26 +1,20 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-//Sorting Items using Bubble Sort
->>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
 #ifndef __CS_252_Project__Badges__
 #define __CS_252_Project__Badges__
 #include <stdio.h>
 #include <string>
 #include <iostream>
+#include <conio.h>
 using namespace std;
 
-class Items{                                //Items list class
+class Items{
 private:
     struct Slot{
         string name;
         int number;
     };
 
-    Slot bag[10];                           //Array to hold items
-    int size;                               //Keeps track of how full item bag is
+    Slot bag[10];
+    int size;
 
 public:
     Items();
@@ -48,41 +42,25 @@ void Items::addItem(string thing){
 void Items::useItem(string thing){
     int spot = -1;
     for(int i = 0; i < size; i++) { if(bag[i].name == thing) { spot = i; } }
-<<<<<<< HEAD
     if(spot == -1) { cout << "No item found"; }
     else if(bag[spot].number == 1){
         for(int i = spot; i < size; i++) { bag[i] = bag[i+1]; }
         size--; }
     else { bag[spot].number--; }
-=======
-    if(spot == -1) { cout << "Item not found"; }
-    else if(bag[spot].number == 1){
-        for(int i = spot; i < size; i++){ bag[i] = bag[i+1]; }
-        size--;
-    } else { bag[spot].number--; }
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
 }
 
 void Items::displayAll(){
     cout << "\n\t\tItems:" << endl;
     for(int i = 0; i < size; i++) { cout << bag[i].name << "\n          x " << bag[i].number << endl; }
-<<<<<<< HEAD
     cout << "\nPress enter to return to the menu.\n\n\n";
     fflush(stdin);
-=======
-    cout << "\nPress any key to return to the menu.\n\n\n";
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
     cin.ignore();
 }
 
-void Items::sort(){                                 //Bubble sort
+void Items::sort(){
     for(int i = 0; i < size; i++){
         for(int j = 0; j < size - 1; j++){
-<<<<<<< HEAD
             if(bag[j].name > bag[j+1].name){
-=======
-            if(bag[j].name > bag[j + 1].name){
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
                 Slot temp  = bag[j + 1];
                 bag[j + 1] = bag[j];
                 bag[j]     = temp;
@@ -100,7 +78,6 @@ void items()
     one.addItem("Escape Rope");
     one.addItem("Moon Stone");
     one.addItem("Antidote");
-<<<<<<< HEAD
     for(int i = 0; i < 3; i++) { one.addItem("Revive"); }
     for(int i = 0; i < 10; i++) { one.addItem("Poke Ball"); }
     for(int i = 0; i < 7; i++) { one.addItem("Potion"); }
@@ -108,20 +85,5 @@ void items()
 
     one.sort();
     one.displayAll();
-=======
-    for(int i = 0; i < 7; i++)  { one.addItem("Great Ball"); }
-    for(int i = 0; i < 5; i++)  { one.addItem("Potion"); }
-    for(int i = 0; i < 3; i++)  { one.addItem("Revive"); }
-    for(int i = 0; i < 10; i++) { one.addItem("Poke Ball"); }
-
-    one.sort();
-    one.displayAll();
-<<<<<<< HEAD
-
-    one.useItem("Potion");
-    one.displayAll();
-=======
->>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
 }
 #endif

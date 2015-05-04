@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>                              //For converting strings to ints
 #include <fstream>                              //For manipulating files
+#include <conio.h>                              //Contains the getch() function
 using namespace std;
 
 class Pokedex{                                  //Pokedex using Binary Tree
@@ -69,36 +70,25 @@ public:
     }
 
     Pokemon* searchPoke(int num){               //extra function allows main to call searchPoke while only passing
-        Pokemon * ptr = head;
-        return findPoke(ptr, num);             //the number of the desired pokedex entry and for findPoke to
+        return findPoke(head, num);             //the number of the desired pokedex entry and for findPoke to
     }                                           //execute recursively
 
     Pokemon* findPoke(Pokemon *temp ,int num){  //traverses the linked list to find a node who's number field
-            if(temp -> number == num) { return temp; } //matches the number passed
+        if(temp){                               //matches the number passed
+            if(temp -> number == num) { return temp; }
             if(temp -> number > num) { findPoke(temp -> left, num); }
             if(temp -> number < num) { findPoke(temp -> right, num); }
-<<<<<<< HEAD
-=======
         }
->>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
+        else { return nullptr; }
     }
 
     void showPokes(){                           //extra function for displaying allows main to call showPokes
         cout << "\nNumber:     Name:          Type(s):\n";
         display(head);                          //without passing any parameters and for display to execute recursively
-<<<<<<< HEAD
         cout << "\nPress enter to return to the menu.\n\n\n";
         fflush(stdin);
         cin.ignore();
-=======
-        cout << "\nPress any key to return to the menu.\n\n\n";
-        cin.ignore();
-<<<<<<< HEAD
->>>>>>> 61c6f4c0b55c8b7d9bada87040ff46398f23a9c5
     }
-=======
-        }
->>>>>>> 4d64c0f73e0981cbd250562e3af9e621ecef2f80
 
     void getPokesFile(){                        //gets all information on each pokemon from a file to add to the BST
 
