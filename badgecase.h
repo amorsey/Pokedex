@@ -1,6 +1,7 @@
 //Badges using Stacks
 #include <iostream>
 #include <stack>
+#include <conio.h>
 using namespace std;
 
 void showBadges()
@@ -16,6 +17,8 @@ void showBadges()
     badgeCase.push("The Thunder Badge");
     badgeCase.push("The Cascade Badge");
     badgeCase.push("The Boulder Badge");
+
+    cout << "\n\t\tBadges:\n";
 
     badge1 = badgeCase.top();
     cout << badge1 << endl;
@@ -49,6 +52,6 @@ void showBadges()
     cout << badge8 << endl << endl;
     badgeCase.pop();
 
-    cout << "Press any key to go back." <<endl;
-    cin.ignore();
+    cout << "Press any key to return to the menu." << endl << endl << endl;
+    getch();
 }

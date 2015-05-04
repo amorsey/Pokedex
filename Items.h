@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
+#include <conio.h>
 using namespace std;
 
 class Items{
@@ -13,10 +14,10 @@ private:
         string name;
         int number;
     };
-    
+
     Slot bag[10];
     int size;
-    
+
 public:
     Items();
     void addItem(string);
@@ -32,12 +33,12 @@ Items::Items(){
 
 void Items::addItem(string thing){
     int spot = -1;
-    
+
     for(int i = 0; i < size; i++){
         if(bag[i].name == thing)
             spot = i;
     }
-    
+
     if(spot > -1){
         bag[spot].number++;
     }else if(size < 10){
@@ -51,12 +52,12 @@ void Items::addItem(string thing){
 
 void Items::useItem(string thing){
     int spot = -1;
-    
+
     for(int i = 0; i < size; i++){
         if(bag[i].name == thing)
             spot = i;
     }
-    
+
     if(spot == -1){
         cout << "No item found";
     } else if(bag[spot].number == 1){
@@ -70,10 +71,12 @@ void Items::useItem(string thing){
 }
 
 void Items::displayAll(){
+    cout << "\n\t\tItems:" << endl;
     for(int i = 0; i < size; i++){
         cout << bag[i].name << "\n          x " << bag[i].number << endl;
     }
-    cout << endl;
+    cout << "\nPress any key to return to the menu.\n\n\n";
+    getch();
 }
 
 void Items::sort(){
@@ -95,11 +98,18 @@ void items()
     one.addItem("Potion");
     one.addItem("Potion");
     one.addItem("Super Potion");
-    one.addItem("Feather");
-    one.addItem("A large book");
+    one.addItem("Rare Candy");
+    for(int i = 0; i < 10; i++) { one.addItem("Poke Ball"); }
+    one.addItem("Escape Rope");
+    for(int i = 0; i < 5; i++) { one.addItem("Great Ball"); }
+    one.addItem("Moon Stone");
+    one.addItem("Antidote");
+    for(int i = 0; i < 3; i++) { one.addItem("Revive"); }
+    one.addItem("Repel");
+
     one.displayAll();
-    
-    one.useItem("Feather");
-    one.displayAll();
+
+    //one.useItem("Rare Candy");
+    //one.displayAll();
 }
 #endif /* defined(__CS_252_Project__Badges__) */

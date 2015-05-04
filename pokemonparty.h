@@ -3,14 +3,14 @@
 #include <cstdlib>      //Needed for srand function
 #include <ctime>        //Needed for time function
 #include "IntQueue.h"   //To attach IntQueue.h
-#ifndef "Pokedex.h"
 using namespace std;
 
-void pokemonparty(Pokedex dex)
+/*void pokemonparty()
 {
     srand (time(NULL));
     const int MAX_VALUES = 6;
     int pokemon;
+    Pokedex dex;
 
     IntQueue iQueue(MAX_VALUES);
 
@@ -28,4 +28,4 @@ void pokemonparty(Pokedex dex)
         dex.displaySingle(value);
     }
 }
-#endif
+*/
